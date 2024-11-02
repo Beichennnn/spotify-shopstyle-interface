@@ -26,9 +26,11 @@ Here are the key libraries used in this project, with brief descriptions:
 - **Pandas**: To structure data (optional, used in data processing).
 - **IPython.display**: For displaying images inline (useful in Jupyter Notebook environments).
 
-Install these libraries via pip if necessary:
-
 - **Jupyter Notebook**: The place to run the code.
+
+  
+
+Install these libraries via pip if necessary:
 
 ```
 pip install spotipy requests numpy opencv-python scikit-learn matplotlib pandas jupyter
