@@ -97,7 +97,7 @@ For each track, the following outputs are displayed:
 
 ------
 
-### 🔧 Example Code Structure
+### ⭐ Example Code Structure
 
 Below is a sample structure of the main functions in the script:
 
@@ -106,3 +106,14 @@ Below is a sample structure of the main functions in the script:
 - **display_outfits**: Displays the outfit recommendations or fetches a sample if no matches are found.
 
 This project combines music and fashion by translating album art colors into personalized outfit recommendations. Enjoy exploring music-inspired styles! 🎉
+
+------
+
+### 🔧 Future Improvements
+
+While the current functionality provides a basic music-inspired outfit recommendation, there are some areas for improvement:
+
+- **Gender Filtering Accuracy**: Occasionally, men’s clothing items appear in women’s outfit recommendations. Enhancing the gender filtering in API calls or applying additional filters to item attributes could improve the accuracy.
+- **Color and Style Matching**: Currently, outfits are recommended based solely on album color matching, which can lead to generic suggestions. A more nuanced approach would incorporate the style and mood of the song (e.g., a vibrant song could suggest casual or sporty styles, while a mellow song might suggest formal or relaxed styles). Future improvements could analyze audio features from Spotify (like energy, tempo, and mood) and combine them with colors for more contextually relevant fashion recommendations.
+
+These enhancements would add depth and personalization, making the recommendations more aligned with both the music’s style and the listener’s preferences.
