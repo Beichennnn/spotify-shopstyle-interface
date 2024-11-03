@@ -10,6 +10,11 @@ This project analyzes the color schemes of album covers from a user's top Spotif
    - [🛍️ ShopStyle API](#-shopstyle-api)
 3. [🚀 Usage](#-usage)
 4. [🛠️ Project Workflow](#-project-workflow)
+5. [🔧 Sorting Options for Recommendations](#-sorting-options-for-recommendations)
+6. [💻 Example Code Structure](#-example-code-structure)
+7. [✨ Future Improvements](#-future-improvements)
+
+
 
 ------
 
@@ -72,44 +77,56 @@ pip install spotipy requests numpy opencv-python scikit-learn matplotlib pandas 
 ### 🛠️ Project Workflow
 
 1. **🎵 Fetch Top Songs from Spotify**:
-   - Using Spotipy, the script fetches the user's top three Spotify tracks (songs). For each track, it retrieves the album cover image URL.
-2. **🎨 Process Album Cover Colors**: (The code is comes from: [Spotify API Color Sorter]([Spotify API Color Sorter. by Carey Crooks | by Carey Crooks | Medium](https://medium.com/@clcrooks/spotify-api-color-sorter-6cb935b9a8fd)) )
+   - Using Spotipy, the script fetches the user's top three Spotify tracks. For each track, it retrieves the album cover image URL.
+2. **🎨 Process Album Cover Colors**:
    - Download and process each album cover image using OpenCV.
    - Apply KMeans clustering to extract the top three colors from each album cover.
    - Display these colors as a color bar for visual reference.
 3. **🎨 Convert Colors to Fashion-Friendly Names**:
    - The RGB values are mapped to commonly used fashion colors (e.g., "black," "white," "gray") to make the color schemes more applicable to clothing.
-   - To improve accuracy, RGB values are first converted to Hue values by importing the **colorsys** library and using the `colorsys.rgb_to_hsv(r, g, b)` function. This ensures more precise color identification, as using only RGB values can sometimes lead to incorrect color definitions. :(
 4. **🛍️ Fetch Outfits from ShopStyle API**:
-   - Search for clothing items matching the color scheme of each album cover, filtering by current season and gender.
+   - Search for clothing items matching the color scheme of each album cover, filtering by season and gender.
    - If no items are found, the code defaults to searching for individual colors or more general fashion terms (like "neutral tones") to ensure relevant results.
 5. **📸 Display Recommendations**:
    - The recommended outfits are displayed with images, names, prices, brands, and links to the ShopStyle website.
 
 ------
 
-### 🔍 Example Output
+### 🔧 Sorting Options for Recommendations
 
-For each track, the following outputs are displayed:
+When calling the ShopStyle API, you can specify how to sort the outfit recommendations by passing a `sort_by` parameter to `get_outfit_suggestions`. The following options are available:
 
-1. Album cover colors in a color bar.
-2. Outfit recommendations that match the combined colors, including images and details.
+- **"popularity"** – Sorts by the most popular items (default).
+- **"price"** – Sorts by price from low to high.
+- **"price_desc"** – Sorts by price from high to low.
+- **"new"** – Sorts by the latest arrivals.
+- **"relevance"** – Sorts by relevance based on the search term.
+
+Example usage:
+
+```
+# Display outfits sorted by price (low to high)
+display_top_songs_colors_and_outfits("women", top_songs_colors, sort_by="price")
+
+# Display outfits sorted by new arrivals
+display_top_songs_colors_and_outfits("women", top_songs_colors, sort_by="new")
+```
 
 ------
 
-### ⭐ Example Code Structure
+### 💻 Example Code Structure
 
 Below is a sample structure of the main functions in the script:
 
 - **get_top_songs_colors**: Fetches Spotify tracks (songs) and extracts album colors.
-- **get_outfit_suggestions**: Queries ShopStyle API based on combined album colors, gender, and current season.
+- **get_outfit_suggestions**: Queries ShopStyle API based on combined album colors, gender, current season and sorting options.
 - **display_outfits**: Displays the outfit recommendations or fetches a sample if no matches are found.
 
-This project combines music and fashion by translating album art colors into personalized outfit recommendations. Enjoy exploring music-inspired styles! 🎉
+This project combines music and fashion by translating album art colors into personalized outfit recommendations. 
 
 ------
 
-### 🔧 Future Improvements
+### ✨ Future Improvements
 
 While the current functionality provides a basic music-inspired outfit recommendation, there are some areas for improvement:
 
