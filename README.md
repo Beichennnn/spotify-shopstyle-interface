@@ -78,7 +78,7 @@ pip install spotipy requests numpy opencv-python scikit-learn matplotlib pandas 
 
 1. **🎵 Fetch Top Songs from Spotify**:
    - Using Spotipy, the script fetches the user's top three Spotify tracks. For each track, it retrieves the album cover image URL.
-2. **🎨 Process Album Cover Colors** (Thpse code is from [Spotify API Color Sorter]([Spotify API Color Sorter. by Carey Crooks | by Carey Crooks | Medium](https://medium.com/@clcrooks/spotify-api-color-sorter-6cb935b9a8fd))) :
+2. **🎨 Process Album Cover Colors** (Those code is from [Spotify API Color Sorter]([Spotify API Color Sorter. by Carey Crooks | by Carey Crooks | Medium](https://medium.com/@clcrooks/spotify-api-color-sorter-6cb935b9a8fd))) :
    - Download and process each album cover image using OpenCV.
    - Apply KMeans clustering to extract the top three colors from each album cover.
    - Display these colors as a color bar for visual reference.
