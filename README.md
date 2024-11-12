@@ -62,8 +62,8 @@ pip install spotipy requests numpy opencv-python scikit-learn matplotlib pandas 
 
 #### 🛍️ ShopStyle API
 
-1. **Create a ShopStyle Collective Account**: Sign up at [ShopStyle Collective](https://support.collectivevoice.com/hc/en-us) and create a new application.
-2. **Retrieve API Key**: Once finish sign-up, you’ll receive a UID/API key in your Account Profile.
+1. **Create a ShopStyle Collective Account**: Sign up at [ShopStyle Collective]([Collective Voice](https://app.collectivevoice.com/)) and create a new application. It will ask you to connect your Instagram or TikTok, if you don't want to connect to your personal one, maybe could apply a new Instagram account.
+2. **Retrieve API Key**: Once finish sign-up, you’ll receive a UID/API key in your Account Setting -> Profile.
 3. **Save ShopStyle API Key**: Save the API Key in a txt file under your file folder.
 
 ------
